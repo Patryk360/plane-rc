@@ -15,11 +15,11 @@ def servo(degrees):
 
 RPWM=Pin(16, Pin.OUT)
 EN_PWM_R=PWM(Pin(17))
-EN_PWM_R.freq(1000)
+EN_PWM_R.freq(10000)
 
 LPWM=Pin(15, Pin.OUT)
 EN_PWM_L=PWM(Pin(14))
-EN_PWM_L.freq(1000)
+EN_PWM_L.freq(10000)
 
 
 while True:
@@ -27,13 +27,13 @@ while True:
 
     sleep(1)
 
-    for duty in range(32512, 65025, 1):
+    for duty in range(30000, 65025, 1):
         EN_PWM_R.duty_u16(duty)
         sleep(0.0001)
 
     sleep(8)
 
-    for duty in range(65025, 32512, -1):
+    for duty in range(65025, 30000, -1):
         EN_PWM_R.duty_u16(duty)
         sleep(0.0001)
 
@@ -47,13 +47,13 @@ while True:
 
     sleep(1)
 
-    for duty in range(32512, 65025, 1):
+    for duty in range(30000, 65025, 1):
         EN_PWM_L.duty_u16(duty)
         sleep(0.0001)
 
     sleep(8)
 
-    for duty in range(65025, 32512, -1):
+    for duty in range(65025, 30000, -1):
         EN_PWM_L.duty_u16(duty)
         sleep(0.0001)
 
